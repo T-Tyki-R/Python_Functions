@@ -29,34 +29,40 @@ def division(*num):
     return div_res
 
 def options():
-    userChoice = int(input())
-
-    match userChoice:
-        case 1:
-            sumRes = addition(*list(map(int, input("Your numbers: ").split()))) 
-            return f"The sum is {sumRes}"
-
-        case 2:
-            diffRes = subtraction(*list(map(int, input("Your numbers: ").split())))
-            return f"The difference is {diffRes}"
+    while True:
+        x = input("Do you wanna continue? y/n")
+        if x == "n":
+            break
         
-        case 3:
-            prodRes = multiplication(*list(map(int, input("Your numbers: ").split())))
-            return f"The product is {prodRes}"
+        print("\t Calculator\n1. Addition\n2. Subtraction\n3. Multiplication\n4. Division")
 
-        case 4:   
-            try:
-                quoRes = division(*list(map(int, input("Your numbers: ").split())))
-                return f"The quotient is {quoRes}"
-            except ZeroDivisionError:
-                return "Zero is not divisible"
-        
-        case _:
-            return "invalid option...."
+        print("Enter the number to operate: ")
+        userChoice = int(input())
 
-print("\t Calculator\n1. Addition\n2. Subtraction\n3. Multiplication\n4. Division")
+        match userChoice:
+            case 1:
+                sumRes = addition(*list(map(int, input("Your numbers: ").split()))) 
+                return f"The sum is {sumRes}"
 
-print("Enter the number to operate: ")
+            case 2:
+                diffRes = subtraction(*list(map(int, input("Your numbers: ").split())))
+                return f"The difference is {diffRes}"
+            
+            case 3:
+                prodRes = multiplication(*list(map(int, input("Your numbers: ").split())))
+                return f"The product is {prodRes}"
+
+            case 4:   
+                try:
+                    quoRes = division(*list(map(int, input("Your numbers: ").split())))
+                    return f"The quotient is {quoRes}"
+                except ZeroDivisionError:
+                    print("Zero is not divisible") 
+            
+            case _:
+                return "invalid option...."
+
+
 
 print(options())
     
