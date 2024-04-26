@@ -23,19 +23,20 @@ def finder(*num):
 
 def gradeConverter(*grade):
     # A = 100 - 90, B = 89 - 80, C = 79 -70, D = 69 - 60, F = 59 - 0
-    letter = ""
 
     for i in grade:
         if i <= 100 and i >= 90:
-           letter = "A"
+           print("A")
         elif i <= 89 and i >= 80:
-            letter = "B"
+            print("B")
         elif i <= 79 and i >= 70:
-            letter = "C"
+            print("C")
         elif i <= 69 and i >= 60:
-            letter = "D"
-        elif i <= 59 and i == 0:
-            letter = "F"
+            print("D")
+        elif i <= 59 and i >= 0:
+            print("F")
         
-    return letter
+    
 
+ex = gradeConverter(12, 35, 100, 50)
+print(ex)
