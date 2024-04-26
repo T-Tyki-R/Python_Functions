@@ -5,10 +5,16 @@
 # Task 3: Create a func that provides a summary
 
 def activityLog():
-    pass
+    #Will a dict variable work for this assignment?
+    activites = ["Swimming", "Dancing", "Biking"]
+    duration = [30, 25, 20]
+    return activites, duration
 
 def burntCal():
-    pass
+    #Access the the activities and time in the prior function
+    totalCal_Burnt = 0.0
+    # totalCal_Burnt = (duration) * 3.5 <--- Just a reference pf what needs to be multiplied
+
 
 def activitysummary():
     pass
