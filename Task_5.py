@@ -12,9 +12,16 @@ def activityLog():
 
 def burntCal():
     #Access the the activities and time in the prior function
-    totalCal_Burnt = 0.0
-    # totalCal_Burnt = (duration) * 3.5 <--- Just a reference pf what needs to be multiplied
-
+    activities, duration = activityLog()
+    totalCal = []
+    for i in range(len(activities)):
+       totalCal.append(duration[i] * 5)
+    return totalCal
 
 def activitysummary():
-    pass
+    activities, duration = activityLog()
+    totalCal = burntCal()
+    for i in range(len(activities)):
+        print(f"Calories burnt by {activities[i]} are {totalCal[i]} in {duration[i]} minutes.")
+
+activitysummary()
